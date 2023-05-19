@@ -35,19 +35,21 @@ $(document).ready(function () {
     $('#' + i + ' .description').val(localStorage.getItem('' + i))
   };
 
+
+  //cant figure out why this is not working properly - its only applying 'future' to everything
   $(".time-block").each(function(){
     console.log(this);
-    console.log(dayjs().format('H'));
+    console.log(dayjs().format('HH'));
     console.log(this.id)
-    $(this).attr('#') < dayjs().format('H');
+    $((this).id) < dayjs().format('HH');
       $(this).removeClass('present future');
       $(this).addClass('past');
 
-    $(this).attr('#') == dayjs().format('H');
+    $(this).id == dayjs().format('HH');
       $(this).removeClass('past future');
       $(this).addClass('present');
 
-    $(this).attr('#') > dayjs().format('H');
+    $(this).id > dayjs().format('HH');
       $(this).removeClass('past present');
       $(this).addClass('future');  
   });
